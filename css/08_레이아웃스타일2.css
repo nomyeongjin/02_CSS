@@ -1,0 +1,87 @@
+*{
+    /* 
+        모든 요소에
+        width/height가 설정될 때
+        content = width/height - (border*2) - (padding*2)
+        한 크기로 자동 계산에서 설정
+
+        -> 생각한 크기의 요소를 쉽게 만들 수 있도록 도와줌
+    */
+ box-sizing: border-box;   
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: bisque;
+}
+
+/* border 영역 */
+.border{
+    /* 10px 두께의 검정 실선 테두리 */
+    border: 10px solid black;
+    box-sizing: border-box;
+}
+
+/* content 영역 */
+.content{
+    width: 150px;
+    height: 150px;
+
+    /* width/height 설정값이 content 영역에만 적용되도록 변경 */
+    box-sizing: content-box;
+}
+
+/* padding 영역 */
+.padding{
+    width: 200px;
+    height: 200px;
+
+    /* 상하좌우 content, border사이에 20px을 띄움(벌림) */
+    padding: 20px;
+}
+
+/* margin 영역 */
+.margin{
+    /* 상하좌우 다른 요소(부모, 형제 요소)와 50px만큼 간격 설정 */
+    margin: 50px;
+}
+
+.margin2{
+    margin: 100px;
+}
+
+/* padding, border, margin의 방향성 */
+#test1{
+    padding-left: 5px;
+    padding-right: 15px;
+    padding-bottom: 20px;
+    padding-top: 10px;
+
+    margin-top: 200px;
+    margin-bottom: 100px;
+    margin-left: 50px;
+    margin-right: 5px;
+
+    /* solid : 실선 */
+    border-left: 5px solid red;
+    /* dotted : 점선 */
+    border-top: 6px dotted blue;
+    /* double : 이중실선 */
+    border-bottom: 10px double green;
+    /* dashed :  점(-)*/
+    border-right: 3px dashed purple;
+}
+
+/* margin: auto test */
+.container{
+    width: 500px;
+    height: 500px;
+    border: 3px solid black;
+    box-sizing: content-box;
+}
+
+#test3{
+    margin: auto;
+    margin-top: 200px;
+}
