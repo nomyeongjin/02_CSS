@@ -1,0 +1,290 @@
+:root{
+    --main-color : #ddd;
+    /* --main-font-size : 20px */
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Pretendard-Regular';
+    /* border: 1px solid black; 완성 시 삭제 */
+}
+
+a{
+    color: black;
+    text-decoration: none; /* 밑줄 제거 */
+}
+
+ul{
+    list-style: none; /* 목록의 스타일(앞에 붙는 점)제거 */
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    
+    /* 화면 (기기, 브라우저) 크기가 작아져도 유지해야할 최소 너비/높이 */
+    min-width: 768px;
+    min-height: 100vh; /* 화면 높이 */
+}
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'YEONGJUPunggiGinsengTTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/YEONGJUPunggiGinsengTTF.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+header{
+    display: flex;
+    padding: 15px 0; /* 상하 좌우 */
+    border-bottom: 2px solid  var(--main-color);
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+
+    /* 화면이 커져도 width 최대값은 1200px */
+    max-width: 1200px;
+}
+.header-container>div{
+    height: 90%;
+    display: flex;
+    align-items: center;
+}
+
+/* 헤더 왼쪽 모든 후손 요소 */
+.header-container-left *{
+    height: 100%;
+}
+
+/* 헤더 오른쪽 후손 a */
+.header-container a{
+    font-weight: bold;
+    color: black;
+    font-size: 0.8em; /* 0.8배 */
+    margin: 0 10px; /* 상하 좌우 */
+}
+
+/* 검색창 */
+.searchbar{
+    padding: 10px 200px 10px 50px;
+    text-align: left;
+    border: none;
+    border-radius: 20px;
+    background-color: #ddd;
+    font-family: 'Pretendard-Regular';
+    position: sticky;
+    top: -1px;
+    z-index: 1000;
+    outline: none;
+}
+input{
+    border: none;
+}
+
+button{
+    background-color: rgba(255,255,255,0);
+    border: none;
+}
+.fa-solid.fa-cart-shopping.fa-2x{
+    margin: 0px 50px 0px 50px;
+}
+
+
+
+
+/* -----------nav------------ */
+nav{
+    padding: 5px 10px;
+    border-bottom: 2px solid var(--main-color);
+    background-color: #fff;
+    position: sticky;
+    top: -1px;
+    z-index: 1000;
+    
+}
+
+.navbar{
+    display: flex;
+    justify-content: center;
+
+}
+
+.navbar>li{
+    width: 20%;
+    height: 40px;
+
+    /* item(a)태그 가운데 배치 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar>li>a{
+    font-size: 1.1em; /* 1.1배 */
+    font-weight: 900;
+    color: #a0a0a0;
+    font-family: 'Pretendard-Regular';
+    padding: 3px 10px;
+    width: 100%; 
+    text-align: center; /* 글자 가운데 선택 */
+}
+
+.navbar>li>a:hover{
+    color: #000000;
+}
+/* --------------------main--------------------- */
+main{
+    flex-grow: 1;
+}
+/* 배너 */
+.outer{
+    width: 100%;
+    height: 330px;
+    overflow-x: hidden;
+    margin: 0 0 20px 0;
+    border-bottom: 2px solid var(--main-color);
+}
+.banner{
+    width: 100%;
+    height: 330px;
+    display: flex;
+    justify-content: center;
+
+    /* 배경 이미지 추가 */
+    background-image: url(../images/banner_image_1704706843833994.png);
+    /* 배경 크기 */
+    background-size: auto 145%;
+    /* 반복 X */
+    background-repeat: no-repeat;
+
+    /* 배경 위치 조정 */
+    background-position: center;
+}
+
+/* ---------아이콘 바---------- */
+.icon-container{
+    
+    flex-wrap: wrap;
+    padding-left: 0;
+    padding-right: 0;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    width: 800px;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* 내용 행 */
+.content-row{
+    border: 1px solid var(--main-color);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 20px;
+    margin: auto;
+
+    display: flex;
+    /* content-row 내부에 작성되는 내용, 요소의 높이에 맞게 자동으로
+    content-row의 height가 지정될 수 있도록 별도 설정을 하지 않음 */
+}
+
+.icon-item{
+    flex-shrink: 0;
+    width: 25%;
+    min-width: 50px;
+    padding: 15px;
+    margin: 10px 0;
+}
+
+.icon{
+
+    display: block; /* 크기 조절 가능 */
+}
+
+.icon:hover{
+    background-color: #ddd;
+    border-radius: 50px;
+}
+
+.icon-image-container{
+    height: 50px;
+    padding-bottom: 10px;
+
+    display: flex;
+    justify-content: center;
+}
+
+
+/* 아이콘 이미지 */
+.icon-image{
+    height: 100%;
+    object-fit: contain;
+    justify-content: center;
+}
+
+.icon-content{
+    text-align: center;
+    white-space: pre-wrap;
+}
+/*------------------- 옷 갤러리---------------------- */
+.title-clothes{
+    margin: 30px 50px;
+}
+h1{
+    font-family: 'YEONGJUPunggiGinsengTTF';
+    font-size: 2em;
+}
+
+
+/* --------------------footer------------------- */
+footer{
+    /* flex-container에 의해서 크기가 변형되는걸 방지 */
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    height: 200px;
+
+    /* 
+        rgba(R, G, B, A) : Red(0~255) Green(0~255) Blue(0~255) Alpha(0.0~1.0) -> 투명도 
+
+        RGB값은 0에 가까울 수록 어두워지고, 255에 가까울수록 선명해짐
+        A값은 0에 가까울수록 투명, 1에 가까울수록 불투명해짐
+
+    */
+    background-color: rgba(210,210,210,0.6);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+footer>p{
+    font-size: 0.8em;
+    margin: 16px 0px;
+    color: #a0a0a0;
+}
+
+footer span{
+    padding: 0 10px;
+}
+
+footer article{
+    font-size: 0.8em;
+}
