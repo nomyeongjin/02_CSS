@@ -165,6 +165,7 @@ main{
     height: 330px;
     display: flex;
     justify-content: center;
+    
 
     /* 배경 이미지 추가 */
     background-image: url(../images/banner_image_1704706843833994.png);
